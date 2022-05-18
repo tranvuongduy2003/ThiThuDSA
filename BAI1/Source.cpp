@@ -55,26 +55,6 @@ void InitList(List& l)
 {
 	l.head = l.tail = nullptr;
 }
-void Insert(List& l, int x)
-{
-	Node* p;
-	p = InitNode(x);
-	if (p == nullptr)
-	{
-		cout << "List is full" << endl;
-		exit(-1);
-	}
-	else
-	{
-		if (l.tail == nullptr)
-			l.head = l.tail = p;
-		else
-		{
-			l.tail->next = p;
-			l.tail = p;
-		}
-	}
-}
 void Insert(List& l, Node* p)
 {
 	if (l.tail == nullptr)
@@ -130,7 +110,7 @@ void Delete(List& l, int x)
 {
 	if (l.head == nullptr)
 	{
-		cout << "Day khong co so can xoa" << endl;
+		cout << "\nDay khong co so can xoa" << endl;
 		return;
 	}
 	else
@@ -163,7 +143,7 @@ void Delete(List& l, int x)
 			}
 		}
 		if (flag == false)
-			cout << "Day khong co so can xoa" << endl;
+			cout << "\nDay khong co so can xoa" << endl;
 		else
 			l.tail = q;
 	}
